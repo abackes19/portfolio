@@ -22,9 +22,7 @@ left = 17
 analogL = 1
 
 rgo = 2000
-rslow = 1500
-lgo = 100
-lslow = 600
+lgo = 1000
 
 
 RPL.servoWrite(motorR, rgo)
@@ -47,11 +45,11 @@ while True:
         if RPL.digitalRead(left) == 0: # digital also sense, so close
             print "close"
             print RPL.analogRead(analogL)
-            RPL.servoWrite(motorR, rslow)
+            RPL.servoWrite(motorR, 0)
             RPL.servoWrite(motorL, lgo)
 
         if RPL.digitalRead(left) == 1: # digital doesn't sense, far
             print "far"
             print RPL.analogRead(analogL)
             RPL.servoWrite(motorR, rgo)
-            RPL.servoWrite(motorL, lslow)
+            RPL.servoWrite(motorL, 0)
