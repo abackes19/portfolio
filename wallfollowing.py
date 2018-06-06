@@ -55,9 +55,3 @@ while True:
             print RPL.analogRead(analogL)
             RPL.servoWrite(motorR, rgo)
             RPL.servoWrite(motorL, lslow)
-
-        if RPL.digitalRead(left) == 1: # digital doesn't sense, far
-            print "far"
-            print RPL.analogRead(analogL)
-            RPL.servoWrite(motorR, rslow)
-            RPL.servoWrite(motorL, lgo)
